@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apam Banjarmasin - Kue Tradisional Khas Kalimantan Selatan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #D32F2F;
+            --primary-dark: #B71C1C;
+            --secondary: #FDD835;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --gray: #757575;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1563805042-7684c019e1cb');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 1;
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-desc {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .qty-btn {
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .qty-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .qty-input {
+            width: 60px;
+            height: 35px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Order Section */
+        .order {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .order-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .order-title h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .order-title p {
+            color: var(--gray);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                display: block;
+                width: max-content;
+                margin: 0 auto 15px;
+            }
+            
+            .btn-outline {
+                margin-left: auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .order-container {
+                padding: 30px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-utensils"></i>
+                    Apam Banjarmasin
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#order">Pesan</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Apam Banjarmasin Autentik</h1>
+                <p>Rasa tradisional khas Kalimantan Selatan yang dibuat dengan resep turun temurun dan bahan-bahan pilihan</p>
+                <div>
+                    <a href="#products" class="btn">Lihat Produk</a>
+                    <a href="#order" class="btn btn-outline">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Apam Banjarmasin</h2>
+                <p>Kue tradisional yang menjadi warisan kuliner khas Kalimantan Selatan</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Apam_Gula_Habang_001.jpg" alt="Apam Banjarmasin">
+                </div>
+                <div class="about-text">
+                    <h3>Kelezatan yang Melegenda</h3>
+                    <p>Apam Banjarmasin adalah kue tradisional khas suku Banjar yang telah ada sejak ratusan tahun lalu. Terbuat dari bahan dasar tepung beras, gula merah, dan santan, apam ini memiliki cita rasa manis gurih yang khas.</p>
+                    <p>Kami menghadirkan apam dengan resep asli turun temurun, diproses secara higienis dan menggunakan bahan-bahan berkualitas tinggi untuk mempertahankan keaslian rasanya.</p>
+                    <p>Setiap gigitan apam kami akan membawa Anda merasakan nostalgia rasa tradisional Banjarmasin yang autentik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Varian Apam Kami</h2>
+                <p>Pilih varian favorit Anda dan nikmati kelezatan apam Banjarmasin</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">Terlaris</div>
+                    <div class="product-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Apam_Gula_Habang_001.jpg" alt="Apam Merah">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Apam Merah</h3>
+                        <p class="product-desc">Apam dengan warna merah kecoklatan dari gula merah asli, memiliki rasa manis yang khas dan tekstur lembut.</p>
+                        <div class="product-price">Rp 15.000 / pcs</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus" data-type="merah">-</button>
+                            <input type="number" class="qty-input" id="qty-merah" value="0" min="0">
+                            <button class="qty-btn plus" data-type="merah">+</button>
+                        </div>
+                        <button class="add-to-cart" data-type="merah">
+                            <i class="fas fa-shopping-cart"></i> Tambah ke Pesanan
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/56/2024/03/25/FotoJet-6-2483807541.jpg" alt="Apam Putih">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Apam Putih</h3>
+                        <p class="product-desc">Apam dengan warna putih bersih, rasa gurih manis yang seimbang dan tekstur yang lebih padat dibanding apam merah.</p>
+                        <div class="product-price">Rp 12.000 / pcs</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus" data-type="putih">-</button>
+                            <input type="number" class="qty-input" id="qty-putih" value="0" min="0">
+                            <button class="qty-btn plus" data-type="putih">+</button>
+                        </div>
+                        <button class="add-to-cart" data-type="putih">
+                            <i class="fas fa-shopping-cart"></i> Tambah ke Pesanan
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- <div class="product-card">
+                    <div class="product-badge">Baru!</div>
+                    <div class="product-img">
+                        <img src="https://i.imgur.com/xyz1234.jpg" alt="Apam Pandan">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Apam Pandan</h3>
+                        <p class="product-desc">Inovasi terbaru dengan tambahan ekstrak daun pandan asli, memberikan aroma wangi dan rasa yang segar.</p>
+                        <div class="product-price">Rp 18.000 / pcs</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus" data-type="pandan">-</button>
+                            <input type="number" class="qty-input" id="qty-pandan" value="0" min="0">
+                            <button class="qty-btn plus" data-type="pandan">+</button>
+                        </div>
+                        <button class="add-to-cart" data-type="pandan">
+                            <i class="fas fa-shopping-cart"></i> Tambah ke Pesanan
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order" id="order">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-title">
+                    <h3>Form Pemesanan</h3>
+                    <p>Isi form berikut untuk memesan apam Banjarmasin favorit Anda</p>
+                </div>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor WhatsApp</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat Lengkap</label>
+                        <textarea id="address" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Catatan Tambahan (opsional)</label>
+                        <textarea id="notes" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Pesanan Anda:</label>
+                        <div id="order-summary" style="background: #fff; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                            <p style="color: var(--gray); text-align: center;">Belum ada item dipesan</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Apam Banjarmasin</h4>
+                    <p>Menjaga tradisi rasa autentik khas Banjarmasin sejak 2010. Setiap apam kami dibuat dengan penuh cinta dan dedikasi.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Maluku Gg. Es Batu No. 40 RT 06, Banjarmasin</p>
+                    <p><i class="fas fa-phone"></i> +62 878-7761-7078</p>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Apam Banjarmasin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            // Update display on resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navLinks.style.display = 'flex';
+                } else {
+                    navLinks.style.display = 'none';
+                }
+            });
+            
+            // Quantity controls
+            const quantityBtns = document.querySelectorAll('.qty-btn');
+            
+            quantityBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = this.getAttribute('data-type');
+                    const input = document.getElementById(`qty-${type}`);
+                    let value = parseInt(input.value);
+                    
+                    if (this.classList.contains('minus')) {
+                        if (value > 0) {
+                            input.value = value - 1;
+                        }
+                    } else if (this.classList.contains('plus')) {
+                        input.value = value + 1;
+                    }
+                    
+                    updateOrderSummary();
+                });
+            });
+            
+            // Add to cart buttons
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = this.getAttribute('data-type');
+                    const input = document.getElementById(`qty-${type}`);
+                    let value = parseInt(input.value);
+                    
+                    if (value === 0) {
+                        input.value = 1;
+                    }
+                    
+                    updateOrderSummary();
+                    
+                    // Scroll to order form
+                    document.getElementById('order').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Update order summary
+            function updateOrderSummary() {
+                const qtyMerah = parseInt(document.getElementById('qty-merah').value) || 0;
+                const qtyPutih = parseInt(document.getElementById('qty-putih').value) || 0;
+                
+                const orderSummary = document.getElementById('order-summary');
+                
+                if (qtyMerah === 0 && qtyPutih === 0) {
+                    orderSummary.innerHTML = '<p style="color: var(--gray); text-align: center;">Belum ada item dipesan</p>';
+                    return;
+                }
+                
+                let summaryHTML = '<ul style="list-style: none; margin-bottom: 15px;">';
+                let total = 0;
+                
+                if (qtyMerah > 0) {
+                    const subtotal = qtyMerah * 15000;
+                    total += subtotal;
+                    summaryHTML += `
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Apam Merah x${qtyMerah}</span>
+                            <span>Rp ${subtotal.toLocaleString('id-ID')}</span>
+                        </li>
+                    `;
+                }
+                
+                if (qtyPutih > 0) {
+                    const subtotal = qtyPutih * 12000;
+                    total += subtotal;
+                    summaryHTML += `
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Apam Putih x${qtyPutih}</span>
+                            <span>Rp ${subtotal.toLocaleString('id-ID')}</span>
+                        </li>
+                    `;
+                }
+                
+                summaryHTML += '</ul>';
+                summaryHTML += `
+                    <div style="border-top: 1px dashed #ddd; padding-top: 10px; margin-top: 10px;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold;">
+                            <span>Total</span>
+                            <span>Rp ${total.toLocaleString('id-ID')}</span>
+                        </div>
+                    </div>
+                `;
+                
+                orderSummary.innerHTML = summaryHTML;
+            }
+            
+            // Form submission
+            const orderForm = document.getElementById('orderForm');
+            
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                const notes = document.getElementById('notes').value;
+                const qtyMerah = parseInt(document.getElementById('qty-merah').value) || 0;
+                const qtyPutih = parseInt(document.getElementById('qty-putih').value) || 0;
+                
+                if (qtyMerah === 0 && qtyPutih === 0) {
+                    alert('Silakan pilih minimal 1 apam untuk dipesan');
+                    return;
+                }
+                
+                // Format WhatsApp message
+                let message = `*PESANAN APAM BANJARMASIN*\n\n`;
+                message += `*Data Pemesan:*\n`;
+                message += `Nama : ${name}\n`;
+                message += `Nomor WA : ${phone}\n`;
+                message += `Alamat : ${address}\n\n`;
+                
+                message += `*Detail Pesanan:*\n`;
+                let total = 0;
+                
+                if (qtyMerah > 0) {
+                    const subtotal = qtyMerah * 15000;
+                    total += subtotal;
+                    message += `- Apam Merah: ${qtyMerah} pcs × Rp15.000 = Rp ${subtotal.toLocaleString('id-ID')}\n`;
+                }
+                
+                if (qtyPutih > 0) {
+                    const subtotal = qtyPutih * 12000;
+                    total += subtotal;
+                    message += `- Apam Putih: ${qtyPutih} pcs × Rp12.000 = Rp ${subtotal.toLocaleString('id-ID')}\n`;
+                }
+                
+                message += `\n*Total Pesanan: Rp ${total.toLocaleString('id-ID')}*\n`;
+                
+                if (notes) {
+                    message += `\n*Catatan Tambahan:*\n${notes}\n`;
+                }
+                
+                message += `\nTerima kasih atas pesanannya! Kami akan segera memproses pesanan Anda.`;
+                
+                // Encode message for WhatsApp URL
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Open WhatsApp dengan nomor 085161050904 (format internasional: 6285161050904)
+                window.open(`https://wa.me/6287877617078?text=${encodedMessage}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
