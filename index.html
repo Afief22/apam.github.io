@@ -9,8 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
-    
+    <style>
+        /* Additional inline styles for minimum order notice */
+        .min-order-notice {
+            background-color: #fff8e1;
+            color: #d35400;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 500;
+            border-left: 4px solid #e67e22;
+        }
+        .min-order-notice i {
+            margin-right: 8px;
+            color: #e67e22;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -76,6 +91,16 @@
                 <h2>Varian Apam Kami</h2>
                 <p>Pilih varian favorit Anda dan nikmati kelezatan Apam Alabio Ifah</p>
             </div>
+            
+            <div class="min-order-notice">
+                <i class="fas fa-info-circle"></i>
+                Minimal pemesanan 50 pcs (boleh campur antara varian)
+            </div>
+            <div class="min-order-notice">
+                <i class="fas fa-info-circle"></i>
+                Pemesanan Pre Order (estimasi 3 hari untuk 50 pcs)
+            </div>
+            
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-badge">Terlaris</div>
@@ -91,9 +116,6 @@
                             <input type="number" class="qty-input" id="qty-merah" value="0" min="0">
                             <button class="qty-btn plus" data-type="merah">+</button>
                         </div>
-                        <!-- <button class="add-to-cart" data-type="merah">
-                            <i class="fas fa-shopping-cart"></i> Tambah ke Pesanan
-                        </button> -->
                     </div>
                 </div>
                 
@@ -110,31 +132,8 @@
                             <input type="number" class="qty-input" id="qty-putih" value="0" min="0">
                             <button class="qty-btn plus" data-type="putih">+</button>
                         </div>
-                        <!-- <button class="add-to-cart" data-type="putih">
-                            <i class="fas fa-shopping-cart"></i> Tambah ke Pesanan
-                        </button> -->
                     </div>
                 </div>
-                
-                <!-- <div class="product-card">
-                    <div class="product-badge">Baru!</div>
-                    <div class="product-img">
-                        <img src="https://i.imgur.com/xyz1234.jpg" alt="Apam Pandan">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Apam Pandan</h3>
-                        <p class="product-desc">Inovasi terbaru dengan tambahan ekstrak daun pandan asli, memberikan aroma wangi dan rasa yang segar.</p>
-                        <div class="product-price">Rp 18.000 / pcs</div>
-                        <div class="quantity-control">
-                            <button class="qty-btn minus" data-type="pandan">-</button>
-                            <input type="number" class="qty-input" id="qty-pandan" value="0" min="0">
-                            <button class="qty-btn plus" data-type="pandan">+</button>
-                        </div>
-                        <button class="add-to-cart" data-type="pandan">
-                            <i class="fas fa-shopping-cart"></i> Tambah ke Pesanan
-                        </button>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -185,18 +184,12 @@
                 <div class="footer-col">
                     <h4>Apam Alabio Ifah</h4>
                     <p>Setiap apam kami dibuat dengan penuh cinta dan dedikasi.</p>
-                    <!-- <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div> -->
                 </div>
                 <div class="footer-col">
                     <h4>Kontak Kami</h4>
                     <p><i class="fas fa-map-marker-alt"></i> Jl. Maluku Gg. Es Batu No. 40 RT 06, Banjarmasin</p>
                     <p><i class="fas fa-phone"></i> +62 878-7761-7078</p>
                 </div>
-
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Apam Alabio Ifah. All Rights Reserved.</p>
@@ -204,7 +197,6 @@
         </div>
     </footer>
 
-<script src="javascript.js"></script>
-    
+    <script src="javascript.js"></script>
 </body>
 </html>
