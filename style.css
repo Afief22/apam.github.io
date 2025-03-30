@@ -238,17 +238,6 @@ header {
   background-color: var(--light);
 }
 
-.min-order-notice {
-  background-color: #fff8e1;
-  color: #d35400;
-  padding: 15px;
-  border-radius: 5px;
-  margin: 0 auto 30px;
-  text-align: center;
-  font-weight: 500;
-  border-left: 4px solid #e67e22;
-  max-width: 800px;
-}
 
 .min-order-notice i {
   margin-right: 8px;
@@ -599,4 +588,10 @@ footer {
   position: absolute;
   top: -2px;
   font-size: 1.2em;
+}
+
+/* Style untuk form yang wajib diisi */
+.form-control[required] {
+  border-left: 2px solid var(--primary);
+  padding-left: 13px; /* sedikit lebih kecil karena border */
 }
