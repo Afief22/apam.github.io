@@ -579,3 +579,24 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.form-group.required label::after {
+  content: " *";
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Atau jika ingin styling yang lebih menonjol */
+.form-group.required label {
+  position: relative;
+}
+
+.form-group.required label::after {
+  content: "*";
+  color: var(--primary);
+  font-weight: bold;
+  margin-left: 4px;
+  position: absolute;
+  top: -2px;
+  font-size: 1.2em;
+}
